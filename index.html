@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionnaire de Classe 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Portail de Gestion des Groupes</h1>
+
+    <section id="ajout-membre">
+        <h2>Ajouter un membre</h2>
+        <div class="form-group">
+            <select id="groupeChoisi">
+                <option value="Groupe A">Groupe A</option>
+                <option value="Groupe B">Groupe B</option>
+                <option value="Groupe C">Groupe C</option>
+                <option value="Groupe D">Groupe D</option>
+            </select>
+            <input type="text" id="nom" placeholder="Nom complet">
+            <input type="text" id="role" placeholder="Rôle (ex: Leader)">
+            <input type="text" id="provenance" placeholder="Ville/Provenance">
+            <label for="photoFile" style="display: block; margin-top: 10px; font-size: 0.9em; color: #555;">Photo de profil :</label>
+<input type="file" id="photoFile" accept="image/*">
+            
+            <div class="actions">
+                <button onclick="ajouterMembre()" class="btn-save">Enregistrer</button>
+                <button onclick="supprimerTout()" class="btn-delete">Vider la base</button>
+                <button onclick="imprimerListe()" class="btn-print" style="background-color: #34495e; color: white; margin-left: 5px;">Imprimer la liste</button>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <div id="filtres">
+        <span>Filtrer par :</span>
+        <button onclick="chargerMembres('Tous')">Tous</button>
+        <button onclick="chargerMembres('Groupe A')">Groupe A</button>
+        <button onclick="chargerMembres('Groupe B')">Groupe B</button>
+        <button onclick="chargerMembres('Groupe C')">Groupe C</button>
+        <button onclick="chargerMembres('Groupe D')">Groupe D</button>
+    </div>
+
+    <section id="liste-groupe">
+        <table id="tableauMembres">
+            <thead>
+                <tr>
+                    <th>Photo</th>
+                    <th>Groupe</th>
+                    <th>Nom</th>
+                    <th>Rôle</th>
+                    <th>Provenance</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
